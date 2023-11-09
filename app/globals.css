@@ -1,27 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body, h2, p, td, table, a, div{
+  font-family: Roboto, Arial;
+}
+
+.highlight{
+  animation: bord 4s linear infinite;
+}
+
+.main{
+  background-image: url('/images/faint-blue.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bullet::before{
+  content:'.';
+  font-size:50px;
+  position: absolute;
+bottom:14px;
+left: -15px;
+color: rgb(59 130 246);
+}
+
+.gray{
+  color: rgb(97, 96, 96);
+}
+
+@keyframes bord {
+  from {
+    transform: rotate(0deg);
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  to{
+    transform: rotate(360deg);
+  }
 }
